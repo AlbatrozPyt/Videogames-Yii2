@@ -42,18 +42,23 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             'options' => ['class' => 'navbar-nav'],
             'items' => [
                 ['label' => 'Home', 'url' => ['/site/index']],
+
+                Yii::$app->user->isGuest ? ""
+                    : ['label' => 'Estudio', 'url' => ['/estudio/']],
+
+                Yii::$app->user->isGuest ? ""
+                    : ['label' => 'Jogo', 'url' => ['/jogo/']],
+
                 Yii::$app->user->isGuest
                     ? ['label' => 'Login', 'url' => ['/site/login']]
                     : '<li class="nav-item">'
                     . Html::beginForm(['/site/logout'])
                     . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->username . ')',
+                        'Logout (' . Yii::$app->user->identity->Email . ')',
                         ['class' => 'nav-link btn btn-link logout']
                     )
                     . Html::endForm()
                     . '</li>',
-                ['label' => 'Estudio', 'url' => ['/estudio/']],
-                ['label' => 'Jogo', 'url' => ['/jogo/']],
             ]
         ]);
         NavBar::end();
@@ -70,7 +75,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         </div>
     </main>
 
-    <footer id="footer" class="mt-auto py-3 bg-light">
+    <footer id="footer" class="mt-auto py-3 bg-dark">
         <div class="container">
             <div class="row text-muted">
                 <div class="col-md-6 text-center text-md-start">&copy; My Company <?= date('Y') ?></div>

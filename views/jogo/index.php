@@ -1,5 +1,6 @@
 <?php
 
+use app\assets\JogoAsset;
 use app\models\Jogo;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -10,6 +11,8 @@ use yii\widgets\ListView;
 /** @var app\models\JogoSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
+
+JogoAsset::register($this);
 $this->title = 'Jogos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>

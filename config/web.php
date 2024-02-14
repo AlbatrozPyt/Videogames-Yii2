@@ -49,7 +49,7 @@ $config = [
         ],
     ],
     'params' => $params,
-    'defaultRoute' => 'site/login',
+    'defaultRoute' => 'site/index',
 ];
 
 if (YII_ENV_DEV) {

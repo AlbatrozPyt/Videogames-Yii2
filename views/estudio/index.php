@@ -1,5 +1,6 @@
 <?php
 
+use app\assets\EstudioAsset;
 use app\models\Estudio;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -10,6 +11,7 @@ use yii\grid\GridView;
 /** @var app\models\EstudioSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
+EstudioAsset::register($this);
 $this->title = 'Estudios';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
